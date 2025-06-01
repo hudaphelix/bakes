@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delicious Cafe</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="hero">
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <img src="LOGO.png" alt="KEITHTSON Logo" />
+        </div>
+        <div class="hamburger">&#9776;</div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Services</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-content">
+      <p class="subheading">Delicious Cafe</p>
+      <h1><i>Sweet Treats,<br>Perfect Eats</i></h1>
+      <div class="buttons">
+        <a href="#" class="btn primary">Shop Now</a>
+        <a href="#" class="btn secondary">Learn More</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+   document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+});
+  </script>
+</body>
+</html>
