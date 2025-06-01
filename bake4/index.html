@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+
+</head>
+<body>
+   <section class="explore-section">
+  <h2 class="explore-title">Explore More</h2>
+
+  <ul class="category-nav">
+    <li class="active" data-category="all">Cake</li>
+    <li data-category="muffins">Muffins</li>
+    <li data-category="croissant">Croissant</li>
+    <li data-category="bread">Bread</li>
+    <li data-category="tart">Tart</li>
+    <li data-category="favorite">Favorite</li>
+  </ul>
+
+  <div class="explore-grid">
+  <img src="img1.png" alt="Muffin" data-category="muffins" data-aos="fade-up">
+  <img src="img2.png" alt="Berry Cake" data-category="cake" data-aos="fade-up" data-aos-delay="100">
+  <img src="img3.png" alt="Fruit Tart" data-category="tart" data-aos="fade-up" data-aos-delay="200">
+  <img src="img4.png" alt="Lemon Cake" data-category="cake" data-aos="fade-up" data-aos-delay="300">
+  <img src="img5.png" alt="Bread" data-category="bread" data-aos="fade-up" data-aos-delay="400">
+  <img src="img6.png" alt="Croissant" data-category="croissant" data-aos="fade-up" data-aos-delay="500">
+</div>
+
+
+  <style>
+    .explore-title {
+      font-family: 'Sansita Swashed', cursive;
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 20px;
+      position: relative;
+      bottom: 20px;
+    }
+
+    .category-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      list-style: none;
+      padding: 0;
+      margin: 0 auto 30px;
+      font-family: 'Poppins', sans-serif;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .category-nav li {
+      cursor: pointer;
+      padding: 10px 20px;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      font-size: 18px;
+      color: #444;
+    }
+
+    .category-nav li.active {
+      border-bottom: 2px solid #c14f33;
+      color: #c14f33;
+    }
+
+    .explore-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+      justify-content: center;
+    }
+
+    .explore-grid img {
+      width: 390px;
+      height: 360px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .explore-grid img:hover {
+      transform: scale(1.05);
+    }
+    
+
+    /* For screens up to 992px (laptops/desktops) */
+@media (max-width: 992px) {
+  .explore-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* For screens up to 768px (tablets) */
+@media (max-width: 768px) {
+  .explore-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .explore-grid img{
+    height: 350px;
+    width: 100;
+  }
+}
+
+/* For screens up to 576px (mobile) */
+@media (max-width: 576px) {
+  .explore-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .explore-grid img {
+    height: 300px;
+  }
+}
+
+/* For extra small devices (up to 420px) */
+@media (max-width: 420px) {
+  .explore-grid {
+    padding: 0 10px;
+    gap: 12px;
+  }
+
+  .explore-grid img {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+
+   
+  </style>
+
+  <script>
+    const categoryItems = document.querySelectorAll('.category-nav li');
+    const images = document.querySelectorAll('.explore-grid img');
+
+    categoryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        document.querySelector('.category-nav li.active')?.classList.remove('active');
+        item.classList.add('active');
+
+        const selectedCategory = item.getAttribute('data-category');
+
+        images.forEach(img => {
+          const imgCategory = img.getAttribute('data-category');
+
+          if (selectedCategory === 'all' || imgCategory === selectedCategory) {
+            img.style.display = 'block';
+          } else {
+            img.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</section>
+
+</body>
+</html>
