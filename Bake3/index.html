@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bakery Banner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- AOS CSS in <head> -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+   .promo-banner {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background-image: url('baker2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.promo-overlay {
+  padding: 30px;
+  border-radius: 10px;
+  display: inline-block;
+  position: relative;
+  bottom: 50px;
+}
+
+.promo-banner h2 {
+  color: #ffffff;
+  font-size: 46px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-family: 'Sansita Swashed', cursive;
+}
+
+.promo-banner p {
+  font-size: 22px;
+  color: #f0f0f0;
+  margin-bottom: 20px;
+}
+
+.promo-btn {
+  background-color: #a14e2c;
+  color: white;
+  padding: 10px 22px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .promo-banner {
+    padding: 30px 15px;
+  }
+
+  .promo-overlay {
+    padding: 25px 15px;
+    bottom: 30px;
+  }
+
+  .promo-banner h2 {
+    font-size: 34px;
+  }
+
+  .promo-banner p {
+    font-size: 18px;
+  }
+
+  .promo-btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .promo-banner h2 {
+    font-size: 26px;
+  }
+
+  .promo-banner p {
+    font-size: 16px;
+  }
+
+  .promo-btn {
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+
+  .promo-overlay {
+    bottom: 20px;
+  }
+}
+
+  </style>
+
+</head>
+<body>
+  <section class="promo-banner" data-aos="fade-up" data-aos-duration="1200">
+  <div class="promo-overlay" data-aos="zoom-in" data-aos-duration="1000">
+    <h2 data-aos="fade-up" data-aos-delay="300">About Us</h2>
+    <p data-aos="fade-up" data-aos-delay="400">
+      Suspendisse ac rhoncus nisl,<br> eu tempor urna. Curabitur vel<br>
+      bibendum lorem. Morbi<br> convallis.
+    </p>
+    <a href="#" class="promo-btn" data-aos="fade-up" data-aos-delay="600">Read More</a>
+  </div>
+</section>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</body>
+
+</html>
